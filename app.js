@@ -9,7 +9,9 @@ const mainRouter = require("./routes/user");
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://signinregister.netlify.app' // or '*' to allow all origins
+}));
 app.use("/api/v1", mainRouter);
 
 const port = process.env.PORT || 3000;
